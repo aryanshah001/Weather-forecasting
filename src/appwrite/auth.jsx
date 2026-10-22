@@ -61,6 +61,31 @@ console.log(import.meta.env.VITE_APPWRITE_PROJECT_ID);
             throw error
         }
     }
+
+    async createRecovery(email) {
+        try {
+            return await this.account.createRecovery({
+                email,
+                url: `${window.location.origin}/resetPassword`,
+            })
+        } catch (error) {
+            console.log('appwrite::createRecovery::error', error)
+            throw error
+        }
+    }
+
+    async updateRecovery(userId, secret, password) {
+        try {
+            return await this.account.updateRecovery({
+                userId,
+                secret,
+                password,
+            })
+        } catch (error) {
+            console.log('appwrite::updateRecovery::error', error)
+            throw error
+        }
+    }
 }
 
  const authService = new AuthService()

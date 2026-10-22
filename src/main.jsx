@@ -13,6 +13,7 @@ import HistoricalData from './components/Footer/FooterLink/Products/HistoricalDa
 import WeatherMap from './components/Footer/FooterLink/Products/WeatherMap.jsx'
 import Terms from './components/Footer/FooterLink/Terms.jsx'
 import Privacy from './components/Footer/FooterLink/Privacy.jsx'
+import ResetPass from './pages/ResetPass.jsx'
 
 
 const router = createBrowserRouter(
@@ -38,6 +39,13 @@ const router = createBrowserRouter(
       
   } />
 
+  <Route path='/resetPassword' element={
+    <AuthStatus authentication={false}>
+      <ResetPass />
+    </AuthStatus>
+  } />
+
+{/* Footer */}
   <Route path = '/historicalData' element={
     <AuthStatus authentication={true}> <HistoricalData /> </AuthStatus>
   }  />

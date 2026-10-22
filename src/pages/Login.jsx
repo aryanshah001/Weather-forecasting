@@ -66,6 +66,10 @@ function Login() {
         Don't have an Account. Create New Accouont
         <p className="ml-18 text-blue-500 "><Link to='/signup'> Signup </Link></p>
       </div> <br /><br />
+
+      <div className="text-center">
+        <Link className="text-blue-500 hover:text-blue-600" to='/resetPassword'>Forgot password?</Link>
+      </div>
       </div>
     </div>
   )
